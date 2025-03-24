@@ -1,0 +1,19 @@
+﻿@model v_try.Models.Subtopic
+
+@{
+    ViewData["Title"] = "Create New SubTopic";
+}
+
+<h1>Create New SubTopic for Topic: @ViewBag.TopicName</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="SubtopicName"><strong>SubTopic Name</strong></label>
+        <input type="text" class="form-control" asp-for="SubtopicName" placeholder="Enter SubTopic Name" required />
+        <span asp-validation-for="SubtopicName" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="TopicId" />
+
+    <button type="submit" class="btn btn-success">Create SubTopic</button>
+</form>
